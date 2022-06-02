@@ -16,8 +16,8 @@ model.load_state_dict(torch.load("./model_leaf_plant_disease_detection_model_v1.
 
 
 model = model.to(device)
-classes = ['chili_healthy','chili_leaf curl', 'chili_leaf spot', 'chili_whitefy','chili_yellowish', 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot',
-'Corn_(maize) Common rust_', 'Corn_(maize) healthy','Corn_(maize)_Northern Leaf Blight','Potato___Early_blight','Potato___healthy','Potato___Late_blight']
+classes = ['chili healthy','chili leaf curl', 'chili leaf spot', 'chili whitefy','chili yellowish', 'Corn(maize) Cercospora_leaf_spot Gray_leaf_spot',
+'Corn(maize) Common rust_', 'Corn(maize) healthy','Corn(maize) Northern Leaf Blight','Potato Early_blight','Potato healthy','Potato Late_blight']
 
 
 pretrained_means = [0.4581, 0.5027, 0.3906]

@@ -30,6 +30,7 @@ class GetImage(APIView):
         serializer = ImageSerializer(images, many = True)
         data = serializer.data
         rs = single_prediction(data[0]['image'])
-        result = Result(rs, data[0]['image'], data[0]['id'])
+        name = rs.split(' ',1)
+        result = Result(name[0],name[1], data[0]['image'], data[0]['id'])
         serializer = ResultPridictSerialize(result)
         return Response(serializer.data, status=status.HTTP_200_OK)

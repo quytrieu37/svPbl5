@@ -24,7 +24,7 @@ class ImageViewSet(APIView):
         image = UploadImageTest.objects.create(image=file)
         return HttpResponse(json.dumps({'message': "Uploaded"}), status=200)
 
-class GetImage(APIView):
+class PridictLast(APIView):
     def get(seft, request,*args, **kwargs):
         images = UploadImageTest.objects.filter().order_by('-id')
         serializer = ImageSerializer(images, many = True)

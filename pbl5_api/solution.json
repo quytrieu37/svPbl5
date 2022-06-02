@@ -27,7 +27,7 @@
         "Your crops are healthy. You took good care of it.",
         "Healthy Crops",
         "Just take care of it as you usually do."],
-    "Corn (Maize): Grey Leaf Spot": [
+    "Corn (Maize): Gray Leaf Spot": [
         "Gray leaf spot (GLS) is a common fungal disease in the United States caused by the pathogen Cercospora zeae-maydis in corn. Disease development is favored by warm temperatures, 80°F or 27 °C; and high humidity, relative humidity of 90% or higher for 12 hours or more. Cercospora zeae-maydis overwinters in corn residue, allowing inoculum to build up from year to year in fields. Cropping systems with reduced- or no-till and/or continuous corn are at higher risk for gray leaf spot outbreaks.",
         "Gray leaf spot lesions begin as small necrotic pinpoints with chlorotic halos, these are more visible when leaves are backlit. Coloration of initial lesions can range from tan to brown before sporulation begins. Because early lesions are ambiguous, they are easily confused with other foliar diseases such as anthracnose leaf blight, eyespot, or common rust. As infection progresses, lesions begin to take on a more distinct shape. Lesion expansion is limited by parallel leaf veins, resulting in the blocky shaped “spots”. As sporulation commences, the lesions take on a more gray coloration.",
         "https://www.pioneer.com/us/agronomy/gray_leaf_spot_cropfocus.html"],

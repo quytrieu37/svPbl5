@@ -9,7 +9,7 @@ from rest_framework import status
 from rest_framework import permissions
 from .models import UploadImageTest
 from .serializer import ImageSerializer ,ResultPridictSerialize
-from .predict import single_prediction
+from .predict import single_prediction, get_solution
 from .result import Result
 # Create your views here.
 class ImageViewSet(APIView):
@@ -31,6 +31,7 @@ class PridictLast(APIView):
         data = serializer.data
         rs = single_prediction(data[0]['image'])
         name = rs.split(' ',1)
-        result = Result(name[0],name[1], data[0]['image'], data[0]['id'])
+        rss = get_solution(name[0], name[1])
+        result = Result(name[0],name[1], rss["oveview"], rss["solution"], data[0]['image'], data[0]['id'])
         serializer = ResultPridictSerialize(result)
         return Response(serializer.data, status=status.HTTP_200_OK)

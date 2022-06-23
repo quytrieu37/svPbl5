@@ -10,6 +10,8 @@ class ImageSerializer(serializers.ModelSerializer):
 class ResultPridictSerialize(serializers.Serializer):
     treeName = serializers.CharField()
     disease = serializers.CharField()
+    oveview = serializers.CharField()
+    solution = serializers.CharField()
     imageName = serializers.CharField(max_length=200)
     imageId = serializers.CharField()
     # solution = serializers.CharField()

@@ -14,4 +14,5 @@ class ResultPridictSerialize(serializers.Serializer):
     solution = serializers.CharField()
     imageName = serializers.CharField(max_length=200)
     imageId = serializers.CharField()
+    imageSimilar = serializers.CharField()
     # solution = serializers.CharField()

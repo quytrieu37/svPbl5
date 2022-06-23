@@ -30,8 +30,8 @@ class PridictLast(APIView):
         serializer = ImageSerializer(images, many = True)
         data = serializer.data
         rs = single_prediction(data[0]['image'])
-        name = rs.split(' ',1)
+        name = rs[0].split(' ',1)
         rss = get_solution(name[0], name[1])
-        result = Result(name[0],name[1], rss["oveview"], rss["solution"], data[0]['image'], data[0]['id'])
+        result = Result(name[0],name[1], rss["oveview"], rss["solution"], data[0]['image'], data[0]['id'], rs[1])
         serializer = ResultPridictSerialize(result)
         return Response(serializer.data, status=status.HTTP_200_OK)

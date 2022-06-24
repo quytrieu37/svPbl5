@@ -1,5 +1,5 @@
 class Result():
-  def __init__(self, treeName,disease, oveview, solution, imageName, imageId, imageSimilar):
+  def __init__(self, treeName,disease, oveview, solution, imageName, imageId, imageSimilar, predictDate):
     self.treeName = treeName
     self.disease = disease
     self.oveview = oveview
@@ -7,5 +7,8 @@ class Result():
     self.imageName = imageName
     self.imageId = imageId
     self.imageSimilar = imageSimilar
+    self.predictDate = predictDate
+
+
 
    

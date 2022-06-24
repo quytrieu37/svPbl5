@@ -1,6 +1,6 @@
 import json
 from sys import api_version
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from PIL import Image
 from rest_framework.views import APIView
@@ -8,12 +8,30 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import permissions
 from .models import UploadImageTest
-from .serializer import ImageSerializer ,ResultPridictSerialize
+from .serializer import ImageSerializer ,ResultPridictSerialize, UserSerializer
 from .predict import single_prediction, get_solution
 from .result import Result
 from django.shortcuts import get_object_or_404
 import datetime
+from django.contrib.auth.hashers import make_password
+
 # Create your views here.
+class UserRegisterView(APIView):
+    def post(self, request):
+        serializer = UserSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.validated_data['password'] = make_password(serializer.validated_data['password'])
+            user = serializer.save()
+            
+            return JsonResponse({
+                'message': 'Register successful!'
+            }, status=status.HTTP_201_CREATED)
+
+        else:
+            return JsonResponse({
+                'error_message': 'This email has already exist!',
+                'errors_code': 400,
+            }, status=status.HTTP_400_BAD_REQUEST)
 class ImageViewSet(APIView):
     queryset = UploadImageTest.objects.all()
     serializer_class = ImageSerializer
